@@ -1,4 +1,5 @@
-Sierpinski's Triangle
+Sierpinski's Triangle: https://en.wikipedia.org/wiki/Sierpinski_triangle
+
 
 1) Make a directory
 
@@ -8,6 +9,7 @@ Sierpinski's Triangle
 ```git clone https://github.com/patrickstocklin/sierpinski-fractal-triangle```
 
 4) Paste Sierpinski.html's path into your preferred web browser
+
 5) Fractals!
 
 

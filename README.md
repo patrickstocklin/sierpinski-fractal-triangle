@@ -16,3 +16,5 @@ Sierpinski's Triangle: https://en.wikipedia.org/wiki/Sierpinski_triangle
 You can change the number of recursive calls by opening up Sierpinski into and editing var numOfIterations within initVertexBuffers(gl).
 
 Will add a polished explanation and an animated sequence later...
+
+Edited: Now includes animation through iterations of recursive draw function.

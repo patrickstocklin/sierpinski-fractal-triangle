@@ -7,32 +7,42 @@
 Points.js - Taken from Professor Montgomery
 */
 
+var count = 0;
+
 // Main function
 // Runs in Browser
 function main() {
-    var canvas = document.getElementById('webgl');
-    var gl = getWebGLContext(canvas);
-    if (!gl) {
+  render();   
+}
+
+function render(){
+  var canvas = document.getElementById('webgl');
+  var gl = getWebGLContext(canvas);
+  if (!gl) {
         console.log('Failed to get the rendering context for WebGL');
         return;
-    }
-    if (!initShaders(gl, VSHADER_SOURCE, FSHADER_SOURCE)) {
+  }
+  if (!initShaders(gl, VSHADER_SOURCE, FSHADER_SOURCE)) {
         console.log('Failed to intialize shaders.');
         return;
-    }
-    var n = initVertexBuffers(gl);
-    if (n < 0) {
+  }
+  var n = initVertexBuffers(gl);
+  if (n < 0) {
         console.log('Failed to set the positions of the vertices');
         return;
-    }
-    gl.clearColor(10, 10, 10, 1);
-    gl.clear(gl.COLOR_BUFFER_BIT);
-    gl.drawArrays(gl.LINES, 0, n);
+  }
+  gl.clearColor(10, 10, 10, 1);
+  gl.clear(gl.COLOR_BUFFER_BIT);
+  gl.drawArrays(gl.LINES, 0, n);
+
+
+  requestAnimationFrame(render);
 }
 
 function initVertexBuffers(gl) {
     //CHANGE THIS / DON'T ENTER MORE THAN 10 !!!
-    var numOfIterations = 8;
+    if(count==8){count = 0;}
+    var numOfIterations = count;
     var numOfVertices = 6*((1-Math.pow(3,(numOfIterations+1)))/(1-3));
     var ourInitialTriangle = [ 0.0,  0.5, -0.5, -0.5,
                               -0.5, -0.5,  0.5, -0.5,
@@ -65,6 +75,7 @@ function initVertexBuffers(gl) {
     gl.vertexAttribPointer(a_Position, 2, gl.FLOAT, false, 0, 0);
     gl.enableVertexAttribArray(a_Position);
 
+    count++;
     return n;
 }
 

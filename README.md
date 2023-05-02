@@ -1,6 +1,8 @@
 Sierpinski's Triangle: https://en.wikipedia.org/wiki/Sierpinski_triangle
 
 ![alt tag](https://imgur.com/uL7jfEP.png "Sample Iteration")
+![alt tag](fractal.gif)
+![alt tag](blackfractal.gif)
 
 
 1) Make a directory
